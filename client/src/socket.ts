@@ -5,8 +5,11 @@ const getToken = () => {
   return store.getState().authenticationState.token;
 };
 
-const socket = io.connect("http://localhost:5000", {
-  query: "token=" + getToken()
-});
+const socket = io.connect(
+  "http://ec2-13-233-238-129.ap-south-1.compute.amazonaws.com/",
+  {
+    query: "token=" + getToken()
+  }
+);
 
 export default socket;
